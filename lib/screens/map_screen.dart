@@ -13,7 +13,8 @@ class _MapScreenState extends State<MapScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('صور الأقمار الاصطناعية', textAlign: TextAlign.right),
+        title: const Text('صور الأقمار الاصطناعية'),
+        centerTitle: false,
         backgroundColor: const Color(0xff426981),
         actions: [IconButton(onPressed: (){}, icon: const Icon(Icons.menu))],
       ),

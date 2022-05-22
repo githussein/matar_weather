@@ -10,9 +10,48 @@ class ReelsScreen extends StatefulWidget {
 class _ReelsScreenState extends State<ReelsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('REELS'),
-
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        title: const Text(
+          'صور صور ومقاطع الطقس',
+          style: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+        centerTitle: false,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.menu))],
+      ),
+      body: PageView.builder(
+        scrollDirection: Axis.vertical,
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return Container(
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(
+                      'https://picsum.photos/id/${index + 1047}/800/1080'),
+                )),
+            child: Center(
+                child: Stack(
+                  children: [
+                    Container(
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Colors.transparent, Colors.black],
+                          begin: Alignment(0, -0.5),
+                          end: Alignment(0, -2),
+                        ),
+                      ),
+                    )
+                  ],
+                )),
+          );
+        },
+      ),
     );
   }
 }
