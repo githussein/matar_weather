@@ -14,17 +14,21 @@ class _MapScreenState extends State<MapScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('التوقعات ومتابعة الحالات'),
+        title: const Text(
+          'صور الأقمار الاصطناعية',
+          style: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+        elevation: 0,
         centerTitle: false,
         backgroundColor: const Color(0xff426981),
       ),
-      drawer: AppDrawer(),
+      drawer: const AppDrawer(),
       body: const WebView(
         debuggingEnabled: true,
         javascriptMode: JavascriptMode.unrestricted,
         initialUrl: 'https://satellites.pro/Oman_map#23.553917,56.337891,6',
       ),
     );
-
   }
 }

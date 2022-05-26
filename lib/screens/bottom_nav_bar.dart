@@ -41,29 +41,29 @@ class _BottomNavBarState extends State<BottomNavBar> {
       const BottomNavigationBarItem(
         icon: Padding(
           padding: EdgeInsets.only(bottom: 8),
-          child: Icon(Icons.wb_sunny),
+          child: Image(image: AssetImage('assets/img/weather.png')),
         ),
-        label: 'التوقعات',
+        label: 'التوقعات ومتابعة الحالات',
       ),
       const BottomNavigationBarItem(
         icon: Padding(
           padding: EdgeInsets.only(bottom: 8),
-          child: Icon(Icons.satellite),
+          child: Image(image: AssetImage('assets/img/sat.png')),
         ),
-        label: 'الأقمار الاسطناعية',
+        label: 'صور الأقمار الاسطناعية',
       ),
       const BottomNavigationBarItem(
         icon: Padding(
           padding: EdgeInsets.only(bottom: 8),
-          child: Icon(Icons.camera_alt),
+          child: Image(image: AssetImage('assets/img/camera.png')),
         ),
-        label: 'صور ومقاطع',
+        label: 'صور ومقاطع الطقس',
       ),
     ];
     return WillPopScope(
       onWillPop: () async {
         final isFirstRouteInCurrentTab =
-        !await _navigatorKeys[_selectedIndex]!.currentState!.maybePop();
+            !await _navigatorKeys[_selectedIndex]!.currentState!.maybePop();
         if (isFirstRouteInCurrentTab) {
           if (_currentPage != 'Predictions') {
             _selectTab('Predictions', 0);

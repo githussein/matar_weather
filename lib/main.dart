@@ -18,8 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const Directionality(
-          textDirection: TextDirection.rtl,
-          child: BottomNavBar()),
+          textDirection: TextDirection.rtl, child: BottomNavBar()),
     );
   }
 }

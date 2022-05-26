@@ -23,9 +23,9 @@ class _ReelsScreenState extends State<ReelsScreen> {
         ),
         centerTitle: false,
         elevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: const Color(0xff426981),
       ),
-      drawer: AppDrawer(),
+      drawer: const AppDrawer(),
       body: PageView.builder(
         scrollDirection: Axis.vertical,
         itemCount: 10,
@@ -40,18 +40,18 @@ class _ReelsScreenState extends State<ReelsScreen> {
                 )),
             child: Center(
                 child: Stack(
-                  children: [
-                    Container(
-                      decoration: const BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [Colors.transparent, Colors.black],
-                          begin: Alignment(0, -0.5),
-                          end: Alignment(0, -2),
-                        ),
-                      ),
-                    )
-                  ],
-                )),
+              children: [
+                Container(
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [Colors.transparent, Colors.black],
+                      begin: Alignment(0, -0.5),
+                      end: Alignment(0, -2),
+                    ),
+                  ),
+                )
+              ],
+            )),
           );
         },
       ),

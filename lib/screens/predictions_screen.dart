@@ -13,15 +13,22 @@ class _PredictionsScreenState extends State<PredictionsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('صور الأقمار الاصطناعية'),
+        title: const Text(
+          'التوقعات ومتابعة الحالات',
+          style: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+        elevation: 0,
         centerTitle: false,
         backgroundColor: const Color(0xff426981),
       ),
-      drawer: AppDrawer(),
+      drawer: const AppDrawer(),
       body: Center(
         child: Column(
           children: const [
-            Image(image: NetworkImage('https://cdn.images.express.co.uk/img/dynamic/78/590x/Cyclone-Hikaa-path-1181787.jpg?r=1569271511914')),
+            Image(
+                image: NetworkImage(
+                    'https://cdn.images.express.co.uk/img/dynamic/78/590x/Cyclone-Hikaa-path-1181787.jpg?r=1569271511914')),
             SizedBox(height: 20),
             Text('توقعات بطقس جميل منعش'),
           ],
