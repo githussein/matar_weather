@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:matar_weather/widgets/app_drawer.dart';
+import '../widgets/app_drawer.dart';
 
 class ReelsScreen extends StatefulWidget {
   const ReelsScreen({Key? key}) : super(key: key);
@@ -12,6 +14,7 @@ class _ReelsScreenState extends State<ReelsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
+      backgroundColor: Colors.black38,
       appBar: AppBar(
         title: const Text(
           'صور صور ومقاطع الطقس',
@@ -21,8 +24,8 @@ class _ReelsScreenState extends State<ReelsScreen> {
         centerTitle: false,
         elevation: 0,
         backgroundColor: Colors.transparent,
-        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.menu))],
       ),
+      drawer: AppDrawer(),
       body: PageView.builder(
         scrollDirection: Axis.vertical,
         itemCount: 10,

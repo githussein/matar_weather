@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import '../widgets/app_drawer.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({Key? key}) : super(key: key);
@@ -13,16 +14,17 @@ class _MapScreenState extends State<MapScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('صور الأقمار الاصطناعية'),
+        title: const Text('التوقعات ومتابعة الحالات'),
         centerTitle: false,
         backgroundColor: const Color(0xff426981),
-        actions: [IconButton(onPressed: (){}, icon: const Icon(Icons.menu))],
       ),
+      drawer: AppDrawer(),
       body: const WebView(
         debuggingEnabled: true,
         javascriptMode: JavascriptMode.unrestricted,
-        initialUrl: 'https://www.google.com/maps/@22.0661,55.1960259,1207941m/data=!3m1!1e3!5m1!1e4',
+        initialUrl: 'https://satellites.pro/Oman_map#23.553917,56.337891,6',
       ),
     );
+
   }
 }
