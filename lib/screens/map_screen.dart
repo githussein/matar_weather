@@ -22,12 +22,29 @@ class _MapScreenState extends State<MapScreen> {
         elevation: 0,
         centerTitle: false,
         backgroundColor: const Color(0xff426981),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.notifications,
+                size: 30,
+                color: Colors.white,
+              )),
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.menu,
+                size: 30,
+                color: Colors.white,
+              )),
+        ],
       ),
-      drawer: const AppDrawer(),
+      endDrawer: const AppDrawer(),
       body: const WebView(
         debuggingEnabled: true,
         javascriptMode: JavascriptMode.unrestricted,
-        initialUrl: 'https://satellites.pro/Oman_map#23.553917,56.337891,6',
+        initialUrl:
+            'https://www.meteoblue.com/ar/weather/maps/widget/oman?windAnimation=1#coords=4.33/25.78/53.29&map=windAnimation~rainbow~auto~10%20m%20above%20gnd~none',
       ),
     );
   }

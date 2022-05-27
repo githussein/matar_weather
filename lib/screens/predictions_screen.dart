@@ -22,7 +22,7 @@ class _PredictionsScreenState extends State<PredictionsScreen> {
         centerTitle: false,
         backgroundColor: const Color(0xff426981),
       ),
-      drawer: const AppDrawer(),
+      endDrawer: const AppDrawer(),
       body: Center(
         child: Column(
           children: [
@@ -30,7 +30,7 @@ class _PredictionsScreenState extends State<PredictionsScreen> {
               children: [
                  Image(
                     fit: BoxFit.fill,
-                    height: MediaQuery.of(context).size.height * 0.35,
+                    height: MediaQuery.of(context).size.height * 0.40,
                     image: const NetworkImage(
                         'https://cdn.images.express.co.uk/img/dynamic/78/590x/Cyclone-Hikaa-path-1181787.jpg?r=1569271511914')),
                 Row(
@@ -75,7 +75,7 @@ class _PredictionsScreenState extends State<PredictionsScreen> {
               ],
             ),
             Container(
-              height: 60,
+              height: 50,
               color: const Color(0xff426981),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,

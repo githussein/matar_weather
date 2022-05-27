@@ -25,7 +25,7 @@ class _ReelsScreenState extends State<ReelsScreen> {
         elevation: 0,
         backgroundColor: const Color(0xff426981),
       ),
-      drawer: const AppDrawer(),
+      endDrawer: const AppDrawer(),
       body: PageView.builder(
         scrollDirection: Axis.vertical,
         itemCount: 10,

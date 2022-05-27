@@ -16,7 +16,7 @@ class AppDrawer extends StatelessWidget {
         children: [
           AppBar(
             leading: IconButton(
-              icon: const Icon(Icons.arrow_back, size: 30,),
+              icon: const Icon(Icons.arrow_back, size: 30),
               onPressed: () => Navigator.of(context).pop(),
             ),
             title: const Text(
@@ -152,7 +152,7 @@ class AppDrawerItem extends StatelessWidget {
       children: [
         const SizedBox(height: 10),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+          padding: const EdgeInsets.only(left: 16, right: 16, bottom: 8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
