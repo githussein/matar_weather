@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:matar_weather/widgets/app_drawer.dart';
-import '../widgets/app_drawer.dart';
+import 'package:matar_weather/screens/settings.dart';
 
 class ReelsScreen extends StatefulWidget {
   const ReelsScreen({Key? key}) : super(key: key);
@@ -24,9 +23,28 @@ class _ReelsScreenState extends State<ReelsScreen> {
         centerTitle: false,
         elevation: 0,
         backgroundColor: const Color(0xff426981),
-      ),
-      endDrawer: const AppDrawer(),
-      body: PageView.builder(
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.notifications,
+                size: 30,
+                color: Colors.white,
+              )),
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SettingsScreen()));
+              },
+              icon: const Icon(
+                Icons.menu,
+                size: 30,
+                color: Colors.white,
+              )),
+        ],
+      ),      body: PageView.builder(
         scrollDirection: Axis.vertical,
         itemCount: 10,
         itemBuilder: (context, index) {

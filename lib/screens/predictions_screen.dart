@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/app_drawer.dart';
+import 'package:matar_weather/screens/settings.dart';
 
 class PredictionsScreen extends StatefulWidget {
   const PredictionsScreen({Key? key}) : super(key: key);
@@ -21,8 +21,28 @@ class _PredictionsScreenState extends State<PredictionsScreen> {
         elevation: 0,
         centerTitle: false,
         backgroundColor: const Color(0xff426981),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.notifications,
+                size: 30,
+                color: Colors.white,
+              )),
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SettingsScreen()));
+              },
+              icon: const Icon(
+                Icons.menu,
+                size: 30,
+                color: Colors.white,
+              )),
+        ],
       ),
-      endDrawer: const AppDrawer(),
       body: Center(
         child: Column(
           children: [
@@ -60,7 +80,7 @@ class _PredictionsScreenState extends State<PredictionsScreen> {
                             padding: MaterialStateProperty.all<EdgeInsets>(
                                 const EdgeInsets.symmetric(horizontal: 20)),
                             foregroundColor: MaterialStateProperty.all<Color>(
-                                Color(0xff426981)),
+                                const Color(0xff426981)),
                             backgroundColor: MaterialStateProperty.all<Color>(
                                 const Color(0xFFFEF9F9)),
                             shape: MaterialStateProperty.all<

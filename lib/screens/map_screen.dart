@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:matar_weather/screens/settings.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import '../widgets/app_drawer.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({Key? key}) : super(key: key);
@@ -31,7 +31,12 @@ class _MapScreenState extends State<MapScreen> {
                 color: Colors.white,
               )),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SettingsScreen()));
+              },
               icon: const Icon(
                 Icons.menu,
                 size: 30,
@@ -39,7 +44,6 @@ class _MapScreenState extends State<MapScreen> {
               )),
         ],
       ),
-      endDrawer: const AppDrawer(),
       body: const WebView(
         debuggingEnabled: true,
         javascriptMode: JavascriptMode.unrestricted,
