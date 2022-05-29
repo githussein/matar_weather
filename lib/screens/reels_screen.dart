@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:matar_weather/screens/settings.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import '../screens/settings.dart';
+import '../services/ad_helper.dart';
 
 class ReelsScreen extends StatefulWidget {
   const ReelsScreen({Key? key}) : super(key: key);
@@ -9,6 +11,40 @@ class ReelsScreen extends StatefulWidget {
 }
 
 class _ReelsScreenState extends State<ReelsScreen> {
+  // late BannerAd _bannerAd;
+  // bool _isBannerAdReady = false;
+  //
+  // InterstitialAd? _interstitialAd;
+  // bool _isInterstitialAdReady = false;
+  //
+  // void _loadInterstitialAd() {
+  //   InterstitialAd.load(
+  //     adUnitId: AdHelper.interstitialAdUnitId,
+  //     request: AdRequest(),
+  //     adLoadCallback: InterstitialAdLoadCallback(
+  //       onAdLoaded: (ad) {
+  //         this._interstitialAd = ad;
+  //
+  //         ad.fullScreenContentCallback = FullScreenContentCallback(
+  //           onAdDismissedFullScreenContent: (ad) {
+  //           },
+  //         );
+  //
+  //         _isInterstitialAdReady = true;
+  //       },
+  //       onAdFailedToLoad: (err) {
+  //         print('Failed to load an interstitial ad: ${err.message}');
+  //         _isInterstitialAdReady = false;
+  //       },
+  //     ),
+  //   );
+  // }
+  //
+  // @override
+  // void dispose() {
+  //   super.dispose();
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,10 +80,21 @@ class _ReelsScreenState extends State<ReelsScreen> {
                 color: Colors.white,
               )),
         ],
-      ),      body: PageView.builder(
+      ),
+      body: PageView.builder(
         scrollDirection: Axis.vertical,
         itemCount: 10,
         itemBuilder: (context, index) {
+          // if (index == 1) {
+          //   print(index);
+          //   _loadInterstitialAd();
+          // }
+          //
+          // if (index == 3) {
+          //   print(index);
+          // _interstitialAd?.show();
+          // }
+          //
           return Container(
             decoration: BoxDecoration(
                 border: Border.all(color: Colors.black),
@@ -67,7 +114,16 @@ class _ReelsScreenState extends State<ReelsScreen> {
                       end: Alignment(0, -2),
                     ),
                   ),
-                )
+                ),
+                // if (_isBannerAdReady)
+                //   Align(
+                //     alignment: Alignment.topCenter,
+                //     child: SizedBox(
+                //       width: _bannerAd.size.width.toDouble(),
+                //       height: _bannerAd.size.height.toDouble(),
+                //       child: AdWidget(ad: _bannerAd),
+                //     ),
+                //   ),
               ],
             )),
           );

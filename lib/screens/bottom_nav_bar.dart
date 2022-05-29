@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'map_screen.dart';
 import 'reels_screen.dart';
 import 'predictions_screen.dart';
@@ -15,6 +16,16 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   String _currentPage = 'Predictions';
   int _selectedIndex = 0;
+
+  Future<InitializationStatus> _initGoogleMobileAds() {
+    return MobileAds.instance.initialize();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _initGoogleMobileAds();
+  }
 
   List<String> pageKeys = ['Predictions', 'Map', 'Reels'];
 
@@ -50,7 +61,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           padding: EdgeInsets.only(bottom: 8),
           child: Image(image: AssetImage('assets/img/sat.png')),
         ),
-        label: 'صور الأقمار الاسطناعية',
+        label: 'صور الأقمار الاصطناعية',
       ),
       const BottomNavigationBarItem(
         icon: Padding(
